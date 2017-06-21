@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: my_Colab_dev
+  username: root
+  password: root
+
+production: 
+  adapter: postgresql
+  encoding: utf8
+  database: my_Colab_dev
+  username: root
+  password: root
