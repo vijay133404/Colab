@@ -2,18 +2,26 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
- <div class="field">
+
+  <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name  %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
+
   <div class="field">
     <%= f.label :Surname %><br />
-    <%= f.text_field :Surname ,:prompt => 'Surname' %>
+    <%= f.text_field :Surname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mobile_number %><br />
+    <%= f.text_field :mobile %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+
 
   <div class="field">
     <%= f.label :password %>
@@ -27,22 +35,21 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
   <div class="field">
     <%= f.label :Birthday %><br />
-    <%= f.date_select :Birthday,:id=>"start_date1" %>
+    <%=  f.date_select :Birthday %>
   </div>
+<div class="field ">
+
+    <%= f.label :gender, "male", :style => "display: inline-block" %>
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label :gender, "female", :style => "display: inline-block" %>
+    <%= f.radio_button :gender, "female" %>
+
+   </div>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
-<script type="text/javascript">
-            $(function () {
-               $('#start_date1').datetimepicker({
-                format: 'DD-MM-YYYY'
-             });
-               
-              }); 
-           </script>
